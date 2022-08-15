@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1018476638959",
+    "project_id": "water-jar-management-80d7d",
+    "storage_bucket": "water-jar-management-80d7d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1018476638959:android:a3ad7148cc704f7696a11a",
+        "android_client_info": {
+          "package_name": "com.example.user_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1018476638959-98dm77obapr94ovg9c13bgt9kgp67rcr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxbxJ6T0JiZ6FRePd519UDwk1G1UXp5Mo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1018476638959-98dm77obapr94ovg9c13bgt9kgp67rcr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
