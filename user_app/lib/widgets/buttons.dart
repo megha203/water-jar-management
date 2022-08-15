@@ -5,9 +5,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:user_app/const/colors.dart';
 
 Widget btn1(
-  onpress,
-  text,
-) =>
+    onpress,
+    text,
+    ) =>
     SizedBox(
       height: Get.height * 0.06,
       width: Get.width * 0.8,

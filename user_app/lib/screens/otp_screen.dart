@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:user_app/const/colors.dart';
 import 'package:user_app/widgets/buttons.dart';
 import 'package:user_app/widgets/textfields.dart';
-
 import '../getx/auth_controller.dart';
 
 class OtpScreen extends StatelessWidget {
@@ -44,6 +43,7 @@ class OtpScreen extends StatelessWidget {
           ),
           const SizedBox(height: 5),
           btn1(null, 'Verify OTP'),
+          // btn1(() => Get.to(const HomeScreen()), 'Home'),
           SizedBox(height: Get.height * 0.05),
         ]),
       ),

@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:user_app/const/colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:user_app/screens/login_screen.dart';
+import 'package:user_app/screens/signup_screen.dart';
 import 'package:user_app/widgets/buttons.dart';
 
 class OnboardingScreen extends StatelessWidget {
@@ -49,6 +50,8 @@ class OnboardingScreen extends StatelessWidget {
             ),
             const Spacer(),
             btn1(() => Get.to(const LoginScreen()), 'Get Started'),
+            SizedBox(height: Get.height * 0.05),
+            btn1(() => Get.to(const SignupScreen()), 'New User'),
             const Spacer(),
           ],
         ),

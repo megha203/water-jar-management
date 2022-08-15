@@ -34,25 +34,25 @@ class SignupScreen extends StatelessWidget {
             const Icon(Icons.person),
             'Full Name',
             _controller.fullnameTextController,
-            (v) {},
+                (v) {},
           ),
           SizedBox(
             height: Get.height * 0.06,
           ),
           textfield(
-            const Icon(Icons.person),
-            'Full Name',
+            const Icon(Icons.contact_phone),
+            'Mobile Number',
             _controller.addressTextController,
-            (v) {},
+                (v) {},
           ),
           SizedBox(
             height: Get.height * 0.06,
           ),
           textfield(
-            const Icon(Icons.person),
-            'Full Name',
+            const Icon(Icons.mail),
+            'Email',
             _controller.cityTextController,
-            (v) {},
+                (v) {},
           ),
           SizedBox(
             height: Get.height * 0.06,

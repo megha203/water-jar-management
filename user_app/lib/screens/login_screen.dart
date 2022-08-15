@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:user_app/const/colors.dart';
 import 'package:user_app/getx/auth_controller.dart';
-import 'package:user_app/screens/otp_screen.dart';
 import 'package:user_app/widgets/buttons.dart';
 import 'package:user_app/widgets/textfields.dart';
 

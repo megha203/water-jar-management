@@ -11,7 +11,7 @@ import '../screens/signup_screen.dart';
 import '../widgets/toast.dart';
 
 class AuthController extends GetxController {
-  
+
   var phoneFormKey = GlobalKey<FormState>();
   var signupFormKey = GlobalKey<FormState>();
 
@@ -35,12 +35,12 @@ class AuthController extends GetxController {
     try {
       await _auth
           .verifyPhoneNumber(
-              phoneNumber: '+91${phoneTextController.text}',
-              timeout: const Duration(seconds: 60),
-              verificationCompleted: verificationCompleted,
-              verificationFailed: verificationFailed,
-              codeSent: codeSent,
-              codeAutoRetrievalTimeout: codeAutoRetrievalTimeout)
+          phoneNumber: '+91${phoneTextController.text}',
+          timeout: const Duration(seconds: 60),
+          verificationCompleted: verificationCompleted,
+          verificationFailed: verificationFailed,
+          codeSent: codeSent,
+          codeAutoRetrievalTimeout: codeAutoRetrievalTimeout)
           .then((value) => Get.to(const OtpScreen()));
     } on FirebaseAuthException catch (e) {
       toast(e.message, Colors.red);
@@ -60,11 +60,11 @@ class AuthController extends GetxController {
     _auth
         .signInWithCredential(credential)
         .then((value) => {
-              storage.write(
-                  key: 'key',
-                  value: FirebaseAuth.instance.currentUser?.phoneNumber
-                      .toString()),
-            })
+      storage.write(
+          key: 'key',
+          value: FirebaseAuth.instance.currentUser?.phoneNumber
+              .toString()),
+    })
         .then((value) => getUserDetail());
   }
 
@@ -90,7 +90,7 @@ class AuthController extends GetxController {
     try {
       await _auth
           .signInWithCredential(PhoneAuthProvider.credential(
-              verificationId: verId.toString(), smsCode: otp))
+          verificationId: verId.toString(), smsCode: otp))
           .then((value) => isverifing = false.obs);
     } on FirebaseAuthException catch (e) {
       toast(e.message, Colors.red);
@@ -106,8 +106,8 @@ class AuthController extends GetxController {
     if (_auth.currentUser != null) {
       storage
           .write(
-              key: 'key',
-              value: FirebaseAuth.instance.currentUser?.phoneNumber.toString())
+          key: 'key',
+          value: FirebaseAuth.instance.currentUser?.phoneNumber.toString())
           .then((value) => getUserDetail());
     }
   }
@@ -119,12 +119,12 @@ class AuthController extends GetxController {
           .collection('user')
           .doc(FirebaseAuth.instance.currentUser?.phoneNumber.toString())
           .set({
-            'name': fullnameTextController.text.toString(),
-            'address': addressTextController.text.toString(),
-            'city': cityTextController.text.toString(),
-          })
+        'name': fullnameTextController.text.toString(),
+        'address': addressTextController.text.toString(),
+        'city': cityTextController.text.toString(),
+      })
           .then((value) =>
-              _auth.currentUser!.updateDisplayName(fullnameTextController.text))
+          _auth.currentUser!.updateDisplayName(fullnameTextController.text))
           .then((value) => getUserDetail());
     } catch (e) {
       toast(e, Colors.red);
@@ -147,15 +147,15 @@ class AuthController extends GetxController {
           .doc('${FirebaseAuth.instance.currentUser?.phoneNumber}')
           .get()
           .then((value) => {
-                if (value.exists)
-                  {
-                    Get.offAll(const HomeScreen()),
-                  }
-                else
-                  {
-                    Get.offAll(const SignupScreen()),
-                  }
-              });
+        if (value.exists)
+          {
+            Get.offAll(const HomeScreen()),
+          }
+        else
+          {
+            Get.offAll(const SignupScreen()),
+          }
+      });
     } catch (e) {
       toast(e, Colors.red);
     }
